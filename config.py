@@ -54,8 +54,10 @@ class Configuracion:
             for name, value in parser.items(section):
                 print('  {} = {!r}'.format(name, value))
 
-        parser.remove_option('conexion_2', 'user')
+        #parser.remove_option('conexion_2', 'user')
         parser.set('conexion_2','user',idUsuario)
+        with open("files//bd_config.cfg", 'w') as configfile:
+            parser.write(configfile)
 
         print('\nModified values:\n')
         for section in parser.sections():
@@ -65,8 +67,8 @@ class Configuracion:
 
 
 modelo = Configuracion()
-modelo.readFile()
-#modelo.modifyUser("HMONTOYA")
+#modelo.readFile()
+modelo.modifyUser("prueba")
         
 
 
