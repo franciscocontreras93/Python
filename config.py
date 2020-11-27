@@ -34,7 +34,6 @@ class Configuracion:
                 db[param[0]] = param[1]       
         self.fileOpen.close
         return db
-
     def config2(self):
         self.fileOpen
         parser = ConfigParser()
