@@ -1,10 +1,13 @@
+import psycopg2
 from configparser import ConfigParser
+
 #from cryptography.fernet import Fernet
 
 
 class Configuracion:
     def __init__(self):
         self.fileOpen = open('files//bd_config.cfg')
+ 
     def create(self):
         self.file = self.fileOpen
         self.section = 'prototipo'
@@ -75,10 +78,17 @@ class Configuracion:
             for name, value in parser.items(section):
                 print('  {} = {!r}'.format(name, value)) """
 
-
+    def conexionPrimaria(self):
+        stringConexion = "dbname='prototipo' user='cmg_toolbox' host='181.143.104.82' password='23826405'"
+        conn = psycopg2.connect(stringConexion)
+        return conn
+    def conexionSecundaria(self,userDb):
+        stringConexion = "dbname='prototipo' user='"+userDb+"' host='181.143.104.82' password='23826405'"
+        conn = psycopg2.connect(stringConexion)
+        return conn
         
 modelo = Configuracion()
-modelo.config()
+modelo.conexionSecundaria("postgres")
 
 
 
