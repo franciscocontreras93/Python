@@ -1,7 +1,7 @@
 import os
 import csv
 
-directorio = "C:/Users/FRANCISCO/Downloads/Telegram Desktop"
+directorio = "F:/FRANCISCO/GIS/ISMAEL/BASES 2020/ENVIAR/verificar"
 archivos = []
 archivo = open('lista.txt', 'wb')
 

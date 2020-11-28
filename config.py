@@ -77,7 +77,8 @@ class Configuracion:
 
 
         
-
+modelo = Configuracion()
+modelo.config()
 
 
 

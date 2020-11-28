@@ -43,7 +43,12 @@ class Conexion:
             return conn      
         except:
             print("Ocurrio un error en la Conexion")
+
+        
+     
+
 model = Conexion()
+
 
 
         
